@@ -69,5 +69,5 @@ Java 21 + Spring Boot 4.1 + Spring Data JPA + PostgreSQL.
 - 버그: `superpowers:systematic-debugging`
 - 코드 탐색·리팩터링: Java LSP(`jdtls-lsp`)로 정의 이동, 참조 찾기, 타입 확인 — grep보다 우선
 - 라이브러리/설정 확인: Context7 MCP로 Spring Boot 4 공식 문서 조회
-- 커밋: 기능 단위로, 위 Commit 규칙에 맞춰 작성
+- 커밋: 기능 단위로 `/commit` (`commit-commands` 플러그인), 위 Commit 규칙에 맞춰 작성
 - 보안 점검: 로그인/권한 기능 추가 후 `/security-review`

@@ -10,6 +10,13 @@ build/
 *.iws
 out/
 
+# Eclipse / jdtls (Java LSP가 자동 생성)
+.classpath
+.project
+.factorypath
+.settings/
+bin/
+
 # VS Code
 .vscode/
 

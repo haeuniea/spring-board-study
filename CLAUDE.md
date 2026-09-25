@@ -8,7 +8,7 @@ Java 21 + Spring Boot 4.1 + Spring Data JPA + PostgreSQL.
 - Framework: Spring Boot 4.1 (Spring Web MVC, Validation)
 - ORM: Spring Data JPA (Hibernate)
 - DB: PostgreSQL (로컬은 Docker Compose로 실행)
-- Test: JUnit 5 + AssertJ + Mockito (`spring-boot-starter-test`), DB 통합 테스트는 Testcontainers
+- Test: JUnit 5 + AssertJ + Mockito (Boot 4 기능별 test starter: `*-data-jpa-test`, `*-webmvc-test`, `*-validation-test`), DB 통합 테스트는 Testcontainers
 - Build: Gradle (Groovy DSL, `build.gradle`)
 - Lombok 사용
 
@@ -57,7 +57,7 @@ Java 21 + Spring Boot 4.1 + Spring Data JPA + PostgreSQL.
 ## DO NOT 금지
 - Entity를 Controller에서 직접 반환하지 않기
 - `ddl-auto: create`/`update`를 local 외 프로파일에서 쓰지 않기
-- DB 비밀번호 등 민감 정보는 설정 파일에 직접 쓰지 않고 환경변수로 관리 (`${DB_URL}`, `${DB_USERNAME}`, `${DB_PASSWORD}`)
+- DB 비밀번호 등 민감 정보는 설정 파일에 직접 쓰지 않고 환경변수로 관리 (`${DB_NAME}`, `${DB_USERNAME}`, `${DB_PASSWORD}` — 로컬은 `.env`에서 주입)
 - 설정 파일(`application*.yml`)은 커밋하고, `.env`·secret 파일만 `.gitignore`
 - 승인 없이 의존성 추가하지 않기
 - 한 번만 쓰이는 로직을 위해 유틸 클래스 만들지 않기

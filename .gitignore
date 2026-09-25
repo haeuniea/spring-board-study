@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Claude Code (personal settings)
+.claude/settings.local.json
+
+# Logs
+*.log

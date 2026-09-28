@@ -30,7 +30,7 @@ Java 21 + Spring Boot 4.1 + Spring Data JPA + PostgreSQL.
 - Run: `./gradlew bootRun --args='--spring.profiles.active=local'`
 
 ## Conventions 코드 컨벤션
-- 패키지: 도메인별 구성 (`post/`, `comment/`, `member/` 아래에 controller·service·repository·dto·entity)
+- 패키지: 도메인별 구성 (`post/`, `comment/`, `member/` 아래에 controller·service·repository·dto·entity·exception), 도메인 공통은 `global/` (config·dto·exception)
 - DTO: `*Request`, `*Response` 접미사, Java `record`로 작성
 - API 응답 형식: 성공 시 DTO 그대로, 실패 시 공통 `ErrorResponse`
 - REST URL: 복수형 명사 (`/api/posts`, `/api/posts/{id}/comments`)
@@ -44,7 +44,8 @@ Java 21 + Spring Boot 4.1 + Spring Data JPA + PostgreSQL.
 - 한 번에 완성본을 만들지 말고 기능 단위로 작게 진행
 - 새로운 Spring 개념/어노테이션이 처음 등장하면 짧게 설명
 - 코드 작성 전 설계(엔티티, API 스펙)를 먼저 합의
-- 가능하면 테스트를 먼저 작성 (TDD)
+- 테스트: Service는 TDD(JUnit + Mockito)로 먼저 작성, Controller는 HTTP 요청(`curl`/IntelliJ HTTP Client)으로 직접 확인
+- Entity·Repository·Controller 테스트(`@DataJpaTest`, `@WebMvcTest`)는 CRUD 완성 후 별도 단계에서 학습
 - 라이브러리/설정 문법이 불확실하면 Context7로 최신 문서 확인 (Spring Boot 4는 3.x와 달라진 부분이 많음)
 
 ## Commit 커밋 메시지
